@@ -9,7 +9,6 @@ async function videoRecorder() {
 	const file = fs.createWriteStream(filename);
 
 	const browser = await launch({
-		executablePath: utils.getExecutablePath(),
 		headless: true,
 		defaultViewport: null,
 		devtools: true,

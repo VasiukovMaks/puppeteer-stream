@@ -4,7 +4,7 @@ import puppeteer, {
 	Page,
 	BrowserLaunchArgumentOptions,
 	BrowserConnectOptions,
-} from "puppeteer-core";
+} from "puppeteer";
 import { Readable, ReadableOptions } from "stream";
 import path from "path";
 
@@ -30,7 +30,7 @@ export class Stream extends Readable {
 	}
 }
 
-declare module "puppeteer-core" {
+declare module "puppeteer" {
 	interface Page {
 		index: number;
 		getStream(opts: getStreamOptions): Promise<Stream>;

@@ -2,7 +2,7 @@ const utils = require('./_utils');
 
 async function videoRecorder() {
 	const { getStream, launch } = require("../dist/PuppeteerStream");
-    const puppeteer = require("puppeteer-core");
+    const puppeteer = require("puppeteer");
 
 	const fs = require("fs");
 
@@ -11,7 +11,6 @@ async function videoRecorder() {
 	const file = fs.createWriteStream(filename);
 
 	const browser = await launch(puppeteer, {
-		executablePath: utils.getExecutablePath(),
 		headless: true,
 		defaultViewport: null,
 		devtools: true,
